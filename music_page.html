@@ -1,0 +1,592 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Yu Zhou Chang Wan | Exhibition Audio</title>
+
+<meta name="description" content="Listen to Yu Zhou Chang Wan, a traditional Chinese musical piece inspired by fishermen returning home at dusk.">
+
+<meta property="og:title" content="Yu Zhou Chang Wan | Exhibition Audio">
+<meta property="og:description" content="A musical reflection on people, water and place.">
+<meta property="og:type" content="website">
+
+<meta name="application-name" content="Yu Zhou Chang Wan">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #f4f1e9;
+    color: #353a34;
+    font-family: Georgia, "Times New Roman", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 560px;
+}
+
+.introduction {
+    padding: 20px 5px 45px;
+}
+
+.eyebrow,
+.audio-label {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8b8b76;
+}
+
+.eyebrow {
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 34px;
+    font-weight: normal;
+    line-height: 1.25;
+    margin: 0 0 25px;
+}
+
+.description {
+    font-size: 17px;
+    line-height: 1.9;
+    color: #62645b;
+}
+
+.enjoy {
+    font-size: 16px;
+    font-style: italic;
+    margin-top: 25px;
+    color: #737461;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #d8d5ca;
+    margin: 0 0 35px;
+}
+
+.audio-section {
+    padding: 0 5px;
+}
+
+.audio-label {
+    margin-bottom: 15px;
+}
+
+.track-title {
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.track-subtitle {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #88877c;
+    margin-bottom: 30px;
+}
+
+/* PROGRESS BAR */
+
+.progress-container {
+    margin-bottom: 22px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+    background: #dedbd1;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #66715e;
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.time-display {
+    display: flex;
+    justify-content: space-between;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #88877c;
+    margin-top: 10px;
+}
+
+/* PLAYER CONTROLS */
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+.play-button {
+    background: #66715e;
+    color: white;
+    padding: 14px 27px;
+    border-radius: 30px;
+}
+
+.secondary-button {
+    background: transparent;
+    color: #606457;
+    padding: 10px 4px;
+}
+
+/* VOLUME */
+
+.volume-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 27px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #77786d;
+}
+
+.volume-container input {
+    width: 110px;
+    accent-color: #66715e;
+    cursor: pointer;
+}
+
+.footer {
+    margin-top: 65px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #aaa99e;
+    text-align: center;
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 29px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .controls {
+        gap: 9px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- INTRODUCTION -->
+
+    <section class="introduction">
+
+             <h1>
+            Yu Zhou Chang Wan<br>
+            渔舟唱晚
+        </h1>
+           <div class="eyebrow">A Musical Reflection</div>
+
+
+        <div class="description">
+
+            This proposal draws inspiration from
+            <em>Yu Zhou Chang Wan</em>, a traditional
+            Chinese musical piece depicting fishermen
+            gently making their way home by boat
+            at the end of a day's work.
+
+            <br><br>
+
+            Traditionally associated with the Shandong
+            region of China, the piece evokes a quiet
+            scene of life along the water. Although
+            originating from a different landscape,
+            its essence resonates particularly strongly
+            here.
+
+        </div>
+
+    </section>
+
+    <hr class="divider">
+
+    <!-- AUDIO PLAYER -->
+
+    <section class="audio-section">
+
+        <div class="audio-label">Enjoy</div>
+
+        <div class="track-title">
+        </div>
+
+        <div class="track-subtitle">
+          
+        </div>
+
+        <audio id="audio" preload="metadata">
+            <source
+                src="yu-zhou-chang-wan.mp3"
+                type="audio/mpeg">
+        </audio>
+
+        <!-- PROGRESS -->
+        <div class="progress-container">
+
+            <div
+                class="progress-bar"
+                id="progressBar"
+                role="slider"
+                tabindex="0"
+                aria-label="Audio playback position"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0">
+
+                <div
+                    class="progress-fill"
+                    id="progressFill">
+                </div>
+
+            </div>
+
+            <div class="time-display">
+                <span id="currentTime">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+
+        </div>
+
+        <!-- BUTTONS -->
+
+        <div class="controls">
+
+            <button
+                class="play-button"
+                id="playButton"
+                onclick="togglePlay()">
+                ▶ Play
+            </button>
+
+            <button
+                class="secondary-button"
+                onclick="restartAudio()">
+                ↻ Restart
+            </button>
+
+        </div>
+
+        <!-- VOLUME -->
+
+        <div class="volume-container">
+
+            <span>Volume</span>
+
+            <span>−</span>
+
+            <input
+                type="range"
+                id="volume"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0.6"
+                aria-label="Volume">
+
+            <span>+</span>
+
+            <span id="volumeValue">60%</span>
+
+        </div>
+
+    </section>
+
+    <div class="footer">
+        LISTEN · REFLECT · EXPERIENCE
+    </div>
+
+</div>
+
+<script>
+
+const audio = document.getElementById("audio");
+const playButton = document.getElementById("playButton");
+const progressBar = document.getElementById("progressBar");
+const progressFill = document.getElementById("progressFill");
+const currentTimeDisplay = document.getElementById("currentTime");
+const durationDisplay = document.getElementById("duration");
+const volumeSlider = document.getElementById("volume");
+const volumeValue = document.getElementById("volumeValue");
+
+// FADE SETTINGS
+const FADE_IN = 3;   // seconds
+const FADE_OUT = 5;  // seconds
+
+let targetVolume = 0.8;
+let fadeTimer = null;
+let fadeStartTime = 0;
+let fadeStartVolume = 0;
+let fadeTargetVolume = 0;
+let fadeDuration = 0;
+
+// Format time
+
+function formatTime(seconds) {
+    if (!Number.isFinite(seconds)) return "0:00";
+
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+
+    return minutes + ":" + String(secs).padStart(2, "0");
+}
+
+// Fade volume smoothly
+
+function fadeVolume(from, to, duration) {
+
+    cancelFade();
+
+    const startTime = Date.now();
+
+    audio.volume = from;
+
+    fadeTimer = setInterval(() => {
+
+        const elapsed = (Date.now() - startTime) / 1000;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Smooth, gentle ease-in curve
+        const eased = progress * progress * progress;
+
+        audio.volume = from + (to - from) * eased;
+
+        if (progress >= 1) {
+            clearInterval(fadeTimer);
+            fadeTimer = null;
+        }
+
+    }, 30);
+}
+
+
+// Cancel any ongoing fade
+
+function cancelFade() {
+    clearInterval(fadeTimer);
+    fadeTimer = null;
+}
+
+// Play with fade-in
+
+async function playAudio() {
+
+    cancelFade();
+
+    audio.volume = 0;
+
+    try {
+        await audio.play();
+        fadeVolume(0, targetVolume, FADE_IN);
+    } catch (error) {
+        audio.volume = targetVolume;
+        console.log("Audio playback failed:", error);
+    }
+}
+
+// Play / Pause
+
+function togglePlay() {
+
+    if (audio.paused) {
+        playAudio();
+    } else {
+        audio.pause();
+    }
+
+}
+
+audio.addEventListener("play", () => {
+    playButton.textContent = "Ⅱ Pause";
+});
+
+audio.addEventListener("pause", () => {
+    playButton.textContent = "▶ Play";
+    cancelFade();
+});
+
+// Restart with fade-in
+
+function restartAudio() {
+    cancelFade();
+    audio.pause();
+    audio.currentTime = 0;
+    playAudio();
+}
+
+// Progress and automatic fade-out
+
+audio.addEventListener("timeupdate", () => {
+
+    if (!Number.isFinite(audio.duration)) return;
+
+    const remaining = audio.duration - audio.currentTime;
+
+    const percentage =
+        (audio.currentTime / audio.duration) * 100;
+
+    progressFill.style.width = percentage + "%";
+
+    progressBar.setAttribute(
+        "aria-valuenow",
+        percentage.toFixed(1)
+    );
+
+    currentTimeDisplay.textContent =
+        formatTime(audio.currentTime);
+
+    // Start fade-out during final 5 seconds
+    if (remaining <= FADE_OUT && remaining > 0) {
+
+        const fadeProgress =
+            Math.max(0, remaining / FADE_OUT);
+
+        audio.volume = targetVolume * fadeProgress;
+
+    }
+
+});
+
+// Duration
+
+audio.addEventListener("loadedmetadata", () => {
+    durationDisplay.textContent =
+        formatTime(audio.duration);
+});
+
+// Seek
+
+let dragging = false;
+
+function seekAudio(event) {
+
+    if (!Number.isFinite(audio.duration)) return;
+
+    const rect = progressBar.getBoundingClientRect();
+
+    let percentage =
+        (event.clientX - rect.left) / rect.width;
+
+    percentage = Math.max(0, Math.min(1, percentage));
+
+    audio.currentTime = percentage * audio.duration;
+
+}
+
+progressBar.addEventListener("pointerdown", event => {
+    dragging = true;
+    progressBar.setPointerCapture(event.pointerId);
+    seekAudio(event);
+});
+
+progressBar.addEventListener("pointermove", event => {
+    if (dragging) seekAudio(event);
+});
+
+progressBar.addEventListener("pointerup", () => {
+    dragging = false;
+});
+
+progressBar.addEventListener("keydown", event => {
+
+    if (!Number.isFinite(audio.duration)) return;
+
+    if (event.key === "ArrowRight") {
+        audio.currentTime = Math.min(
+            audio.duration,
+            audio.currentTime + 5
+        );
+    }
+
+    if (event.key === "ArrowLeft") {
+        audio.currentTime = Math.max(
+            0,
+            audio.currentTime - 5
+        );
+    }
+
+});
+
+// Volume slider
+
+volumeSlider.addEventListener("input", () => {
+
+    targetVolume = Number(volumeSlider.value);
+
+    volumeValue.textContent =
+        Math.round(targetVolume * 100) + "%";
+
+    if (!fadeTimer && audio.currentTime <
+        audio.duration - FADE_OUT) {
+        audio.volume = targetVolume;
+    }
+
+});
+
+targetVolume = Number(volumeSlider.value);
+audio.volume = targetVolume;
+
+// End of track
+
+audio.addEventListener("ended", () => {
+
+    cancelFade();
+
+    audio.volume = 0;
+
+    playButton.textContent = "▶ Play";
+
+    progressFill.style.width = "0%";
+
+    currentTimeDisplay.textContent = "0:00";
+
+});
+
+
+</script>
+
+</body>
+</html>
